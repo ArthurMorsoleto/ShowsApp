@@ -1,34 +1,15 @@
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import React from "react"
-
-const mockShows = {
-    items: [
-        {
-            id: 1,
-            name: "Show 01"
-        },
-        {
-            id: 2,
-            name: "Show 02"
-        }
-        ,
-        {
-            id: 3,
-            name: "Show 03"
-        }
-        ,
-        {
-            id: 4,
-            name: "Show 04"
-        }
-    ]
-}
+import { useShows } from "../../hooks/useShows"
 
 const ShowList = () => {
+    const {shows} = useShows();
+
     return (
         <View>
             <FlatList
-                data={mockShows.items}
+                data={shows}
+                keyExtractor={((item) => item.id)}
                 renderItem={
                     ({ item }) =>
                         <TouchableOpacity>
@@ -45,7 +26,7 @@ const ShowList = () => {
 const styles = StyleSheet.create({
     itemStyle: {
         flexDirection: "row",
-        justifyContent:"center",
+        justifyContent: "center",
         backgroundColor: "#93ceed",
         borderColor: "#084769",
         borderWidth: 1,
