@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { Text, View } from "react-native";
 import { StyleSheet } from "react-native";
+import { useShows } from "../hooks/UseShowsHook";
 
 const HomeScreen = (props) => {
+    const{shows}=useShows();
     return (
         <View style={styles.viewStyle}>
             <Text>Shows Inc.</Text>

@@ -1,18 +1,18 @@
 import { FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native"
-import React from "react"
-import { useShows } from "../../hooks/useShows"
+import React, { useContext } from "react"
+import { AppContext, SET_SELECTED_ITEM_ACTION } from "../../context/AppContext";
 
 const ShowList = () => {
-    const {shows} = useShows();
-
+    const { state, dispatch } = useContext(AppContext);
+    
     return (
         <View>
             <FlatList
-                data={shows}
+                data={state.showList.sort((s1, s2) => ("" + s1.name.localeCompare(s2.name)))}
                 keyExtractor={((item) => item.id)}
                 renderItem={
                     ({ item }) =>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => dispatch({ type: SET_SELECTED_ITEM_ACTION, payload: item.id })}>
                             <View style={styles.itemStyle}>
                                 <Text>{item.name}</Text>
                             </View>
@@ -22,6 +22,7 @@ const ShowList = () => {
         </View>
     )
 }
+
 
 const styles = StyleSheet.create({
     itemStyle: {

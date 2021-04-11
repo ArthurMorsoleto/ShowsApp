@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import { StyleSheet, TextInput, Text } from "react-native";
 import GenericInput from "./GenericInput";
 

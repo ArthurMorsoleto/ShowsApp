@@ -1,9 +1,9 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "http://4d76fc4cf02b.ngrok.io",
+    baseURL: "http://15ed2e7f40db.ngrok.io",
     headers: {
         Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6InNlbmhhMTIzNCIsImlhdCI6MTYxODA4NDc0MCwiZXhwIjoxNjE4MTAyNzQwfQ.0ww6-E6HOVwEDQUTWnr3NPmaCS7LYss9kDtzghh9Lr8"
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6InNlbmhhMTIzNCIsImlhdCI6MTYxODE2NDA5MywiZXhwIjoxNjE4MTgyMDkzfQ.F3hDLgBXLMMaEfbJuEJOlLjyLOsPRj2O5538gfK92OI"
     }
 })

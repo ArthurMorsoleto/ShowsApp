@@ -5,11 +5,11 @@ import { TextInput } from "react-native";
 const GenericInput = (props) => {
     const [stateValue, setStateValue] = useState(props.initialValue);
 
-    const onChangeInputField = (text) => {
+    const onChangeGenericInput = (text) => {
         setStateValue(text);
         
-        if (props.onChange) {
-            props.onChange(text);
+        if (props.onChangeText) {
+            props.onChangeText(text);
         }
     }
 
@@ -18,7 +18,7 @@ const GenericInput = (props) => {
             <TextInput
                 style={props.style}
                 value={stateValue}
-                onChangeText={onChangeInputField} />
+                onChangeText={onChangeGenericInput} />
         </>
     );
 }
